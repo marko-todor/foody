@@ -160,7 +160,45 @@ body {
   font-size: 30px;
 }
 
-#advanced-search{
-  margin-bottom: 100px;
+
+.bg-image-full {
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
 }
 
+.modal-notify .modal-header {
+    border-radius: 3px 3px 0 0;
+    background-color: #d9534f;
+    color: white;
+}
+.modal-notify .modal-content {
+    border-radius: 3px;
+    text-align: center;
+}
+
+.pad-top {
+    padding-top:60px;
+}
+
+.pad-img {
+    padding:5px;
+}
+
+
+/*TO CREATE SPACE BETWEEN ROW*/
+.pad-row {
+    padding-top:20px;
+    padding-bottom:20px; 
+}
+
+/*TO MAKING NAV BAR LINKS WHITE COLORED */
+.navbar-inverse .navbar-nav > li > a {
+color: #FFF;
+}
+
+.navbar-inverse .navbar-brand {
+color: #FFF;
+}

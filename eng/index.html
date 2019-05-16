@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+
+<meta charset = "utf-8">
+<meta name = "viewport" content = "width = device-width, initial-scale = 1, shrink-to-fit = no">
+<meta name = "description" content = "">
+<meta name = "author" content = "">
+
+<title> Foody </title>
+
+<! - Bootstrap core CSS ->
+<link href = "../vendor/bootstrap/css/bootstrap.min.css" rel = "stylesheet">
+
+<link rel = "stylesheet" href = "https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity = "sha384-B4dIYHKNBt8Bc12p + WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S + L3BlXeVIU" crossorigin = "anonymous">
+
+<link href = "../css/stylesheet-foody.css" rel = "stylesheet">
+
+
+</head>
+
+<body onload = "fillUsers ()">
+
+<! - Navigation ->
+<nav class = "navbar fixed-top navbar-expand-sm navbar-dark bg-danger fixed-top">
+<div class = "container">
+<a class="navbar-brand" href="index.html"> <img id = "logo" src = "images / logo_transparent.png"> Foody </a>
+<button class = "navbar-toggler navbar-toggler-right" type = "button" data-toggle = "collapse" data-target = "# navbarResponsive" aria-expanded = "false" aria- label = "Toggle navigation">
+<span class = "navbar-toggler-icon"> </span>
+</ button>
+<div class = "collapse navbar-collapse text-center" id = "navbarResponsive">
+<ul class = "navbar-nav ml-auto">
+<li class = "nav-item">
+<a class="nav-link" href="pages/about.html"> About Us </a>
+</ li>
+<li class = "nav-item">
+<a class="nav-link" href="pages/my-orders.html"> Orders </a>
+</ li>
+<li class = "nav-item dropdown">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+Restaurants
+</a>
+<div class = "dropdown-menu dropdown-menu-right" aria-labelledby = "navbarDropdown">
+<a class="dropdown-item" href="pages/stari-grad.html"> Old Town </a>
+<a class="dropdown-item" href="pages/dorcol.html"> Dorcol </a>
+<a class="dropdown-item" href="pages/vracar.html"> Doctor </a>
+<a class="dropdown-item" href="pages/zvezdara.html"> Zvezdara </a>
+</ div>
+</ li>
+<li class = "nav-item" id = "loginText">
+
+</ li>
+</ ul>
+</ div>
+</ div>
+</ nav>
+
+<! - Commercial ->
+<header>
+<div id = "carouselExampleIndicators" class = "carousel slide" data-ride = "carousel">
+<ol class = "carousel-indicators">
+<li data-target = "# carouselExampleIndicators" data-slide-to = "0" class = "active"> </ li>
+<li data-target = "# carouselExampleIndicators" data-slide-to = "1"> </ li>
+<li data-target = "# carouselExampleIndicators" data-slide-to = "2"> </ li>
+</ ol>
+<div class = "carousel-inner" role = "listbox">
+<! - Slide One - Set the background image for this slide in the line below ->
+<div class = "carousel-item active" style = "background-image: url ('images / mediterrane_kueche.jpg'); width: 100%; height: 500px! important;">
+<div class = "carousel-caption d-none d-md-block">
+<h3> Quality </ h3>
+<p> Find the most exciting and popular food in the city </ p>
+</ div>
+</ div>
+<! - Slide Two - Set the background image for this slide in the line below ->
+<div class = "carousel-item" style = "background-image: url ('images / 22-13-things-your-pizza-guy-wont-tell-you-knocking.jpg'); height: 500px! important; ">
+<div class = "carousel-caption d-none d-md-block">
+<h3> Reliability </ h3>
+<p> Fast delivery to your home address </ p>
+</ div>
+</ div>
+<! - Slide Three - Set the background image for this slide in the line below ->
+<div class = "carousel-item" style = "background-image: url ('images / AdobeStock_84475760-1.jpeg'); width: 100%; height: 500px! important;">
+<div class = "carousel-caption d-none d-md-block">
+<h3> Budget </ h3>
+<p> Daily discounts and promotions </ p>
+</ div>
+</ div>
+</ div>
+<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+<span class = "carousel-control-prev-icon" aria-hidden = "true"> </ span>
+<span class = "sr-only"> Previous </ span>
+</a>
+<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+<span class = "carousel-control-next-icon" aria-hidden = "true"> </ span>
+<span class = "sr-only"> Next </ span>
+</a>
+</ div>
+</ header>
+
+<! - Page Content ->
+<div class = "container">
+
+<div class = "my-4">
+<div class = "col-sm-12">
+<nav aria-label = "breadcrumb">
+<ol class = "breadcrumb">
+<li class = "breadcrumb-item active" aria-current = "page"> <a href="#"> Home </a> </ li>
+</ ol>
+</ nav>
+</ div>
+</ div>
+
+<h1 class = "my-4"> Welcome to Foody! For you: </ h1>
+
+<div class = "row" style = "margin-top: 20px;">
+<div class = "col-md-4 mb-5">
+<div class = "card h-100">
+<img class = "card-img-top" src = "images / top-manufaktura.jpg" alt = "manufaktura">
+<div class = "card-body">
+<h4 class = "card-title"> Production </ h4>
+<p class = "card-text"> In the oldest part of Belgrade, on Dorćol, there is Manufaktura, a restaurant of authentic Balkan cuisine and drinks. In an ambience that combines traditionally and modernly, you expect barbecue grilles, grilled meat, specialties underneath the sauce and delicious dessert, as well as from the grandma's kitchen. </ P>
+</ div>
+<div class = "card-footer text-center">
+<a href="pages/manufaktura.html" class="btn btn-outline-danger"> Learn more </a>
+</ div>
+</ div>
+</ div>
+<div class = "col-md-4 mb-5">
+<div class = "card h-100">
+<img class = "card-img-top" src = "images / top-madera.jpg" alt = "madera">
+<div class = "card-body">
+<h4 class = "card-title"> </ h4>
+<p class = "card-text"> Madera's restaurant for decades is an inevitable and cultic city of the capital. It is located at the address of Kralja Aleksandra No. 43, leaning against the Tasmajdan park, it was always a day-long stay of "sighted" Belgradeians: the legends of Belgrade, artists, athletes, politicians, businessmen, public figures see Maderu's restaurant as another house. </ P>
+</ div>
+<div class = "card-footer text-center">
+<a href="pages/madera.html" class="btn btn-outline-danger"> Learn more </a>
+</ div>
+</ div>
+</ div>
+<div class = "col-md-4 mb-5">
+<div class = "card h-100">
+<img class = "card-img-top" src = "images / top-toro.jpg" alt = "supermarket-parts">
+<div class = "card-body">
+<h4 class = "card-title"> Toro Latin Gastro Bar </ h4>
+<p class = "card-text"> Famous chef Richard Sandoval opened the first restaurant in Serbia with the concept of "small plates" based on Latin American flavors. Experience the unique Toro Latinoamerican experience and discover the richness of Latin flavors through the menu at a good price - taste some of the best latino cuisine. </ P>
+</ div>
+<div class = "card-footer text-center">
+<a href="pages/toro.html" class="btn btn-outline-danger"> Learn more </a>
+</ div>
+</ div>
+</ div>
+</ div>
+
+<br>
+<h1 class = "my-4"> Ready to order? </ h1>
+<br>
+<form name = "nameSearch">
+<div class = "row">
+<div class = "col-sm-6 offset-sm-3">
+<div class = "input-group">
+<input type = "text" class = "form-control" placeholder = "Enter restaurant name" name = "restaurantName">
+<div class = "input-group-append">
+<button class = "btn btn-secondary" type = "button" onClick = "redirectRestaurant ()">
+<i class = "fa fa-search"> </ i>
+</ button>
+</ div>
+</ div>
+</ div>
+</ div>
+</ form>
+
+<br> <br>
+
+<div class = "row">
+<div class = "col-sm-12">
+<img class = "img img-fluid" src = "images / steps.png">
+</ div>
+
+</ div>
+
+
+
+
+</ div>
+
+
+<! - Footer ->
+<footer class = "footer mt-5 pt-4">
+<div class = "container">
+<div class = "text-center-text-text-md-left">
+<div class = "col-xs-12 col-sm-2 offset-sm-2">
+<h5 class = "text-white"> Contact </ h5>
+<ul class = "list-unstyled quick-links">
+<li> <a href="pages/about.html"> <i class = "fa"> </ i> About us </a> </ li>
+</ ul>
+</ div>
+<div class = "col-xs-12 col-sm-2 offset-sm-1">
+<h5 class = "text-white"> Content </ h5>
+<ul class = "list-unstyled quick-links">
+<li> <a href="pages/restaurants.html"> <i class = "fa"> </ i> Restaurants </a> </ li>
+</ ul>
+</ div>
+<div class = "col-xs-12 col-sm-2 offset-sm-1">
+<h5 class = "text-white"> Profile </ h5>
+<ul class = "list-unstyled quick-links">
+<li> <a href="pages/my-orders.html"> <i class = "fa"> </ i> My orders </a> </ li>
+</ ul>
+</ div>
+</ div>
+<div class = "row">
+<div class = "col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+<ul class = "list-unstyled list-inline social text-center">
+<li class = "list-inline-item faa"> <a href="https://www.facebook.com"> <i class = "fab fa-facebook-square"> </ i> </a> </ li>
+<li class = "list-inline-item faa"> <a href="https://www.twitter.com"> <i class = "fab fa-twitter"> </ i> </a> < li>
+<li class = "list-inline-item faa"> <a href="https://www.instagram.com"> <i class = "fab fa-instagram"> </ i> </a> < li>
+<li class = "list-inline-item faa"> <a href="https://www.google.com"> <i class = "fab fa-google-plus"> </ i> </a> </ li>
+<li class = "list-inline-item faa"> <a href="https://www.envelope.com" target="_blank"> <i class = "fa fa-envelope"> </ i> / a> </ li>
+</ ul>
+</ div>
+</ hr>
+</ div>
+<div class = "row">
+<div class = "col-xs-12 col-sm-12 col-md-12 mt-2 text-center text-white">
+<hr style = "background-color: white;">
+<p> Copyright 2019, Ana Dimitrijević Marko Todorović, Department of Software Engineering of the Faculty of Electrical Engineering in Belgrade </ p>
+</ div>
+
+</ div>
+</ div>
+</ footer>
+
+
+<! - Bootstrap core JavaScript ->
+<script src = "vendor/jquery/jquery.min.js"> </script>
+<script src = "vendor/bootstrap / js / bootstrap.bundle.min.js"> </script>
+
+<script src = "js / foody.js"> </script>
+
+</body>
+
+</html>

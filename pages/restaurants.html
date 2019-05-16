@@ -20,7 +20,7 @@
 
 </head>
 
-<body>
+<body onload = "load()">
 
   <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-danger fixed-top">
@@ -35,19 +35,21 @@
             <a class="nav-link" href="about.html">O nama</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="restaurants.html">Restorani</a>
+            <a class="nav-link" href="my-orders.html">Porudžbine</a>
           </li>         
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dostava
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restorani
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="delivery.html">Informacije</a>
-              <a class="dropdown-item" href="my-orders.html">Moje porudžbine</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="stari-grad.html"> Stari grad </a>
+              <a class="dropdown-item" href="dorcol.html"> Dorćol </a>
+              <a class="dropdown-item" href="vracar.html"> Vračar </a>
+              <a class="dropdown-item" href="zvezdara.html"> Zvezdara </a>
             </div>
           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="">Odjava</a>
+          <li class="nav-item" id = "loginText">
+            
           </li>
         </ul>
       </div>
@@ -55,209 +57,195 @@
   </nav>
 
 
+
   <!-- Page Content -->
   <div class="container">
     <br>
-      <div class="row my-4">
-        <div class="col-sm-12">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item" aria-current="page"><a href="../index.html"> Početna </a></li>
-              <li class="breadcrumb-item active" aria-current="page"><a href="#"> Restorani </a></li>
-            </ol>
-          </nav>
-        </div>
+    <div class="row my-4">
+      <div class="col-sm-12">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item" aria-current="page"><a href="../index.html"> Početna </a></li>
+            <li class="breadcrumb-item active" aria-current="page"><a href="#"> Restorani </a></li>
+          </ol>
+        </nav>
       </div>
+    </div>
 
     <div class="row">
-        <div class="col-lg-12">
-          <form name="sortingForm" onsubmit="return sortRestaurants();">
-            <h1> Restorani </h1>
-            <br>
-            <select name="sortParameter">
-              <optgroup label="Naziv">
-                <option>Rastuće</option>
-                <option>Opadajuće</option>
-              </optgroup>
-              <optgroup label="Ocena">
-                <option>Rastuće</option>
-                <option>Opadajuće</option>
-              </optgroup>
-              <optgroup label="Opština">
-                <option>Stari Grad</option>
-                <option>Vračar</option>
-                <option>Novi Beograd</option>
-                <option>Dorćol</option>
-                <option>Zvezdara</option>
-              </optgroup>
-              <optgroup label="Tip kuhinje">
-                <option>Tradicionalna</option>
-                <option>Italijanska</option>
-                <option>Kineska</option>
-                <option>Meksička</option>
-                <option>Veganska</option>
-              </optgroup>
-              <optgroup label="Cena">
-                <option>$</option>
-                <option>$$</option>
-                <option>$$$</option>
-              </optgroup>
-              
-            </select>
-            &nbsp;
-            <button type="submit" class="btn btn-sm btn-outline-danger">Sortiraj &nbsp;<i class="fa fa-sort-amount-asc"></i></button>
-          </form>
-          <hr>
-        </div>
+      <div class="col-lg-12">
+        <form name="sortingForm" onsubmit="return sortRestaurants();">
+          <h1> Restorani </h1>
+          <br>
+          <select id="sortParameter">
+            <optgroup label="Naziv">
+              <option>Naziv/Rastuće</option>
+              <option>Naziv/Opadajuće</option>
+            </optgroup>
+            <optgroup label="Ocena">
+              <option>Ocena/Rastuće</option>
+              <option>Ocena/Opadajuće</option>
+            </optgroup>
+            <optgroup label="Cena">
+              <option>Cena/Rastuće</option>
+              <option>Cena/Opadajuće</option>
+            </optgroup>
+            
+          </select>
+          &nbsp;
+          <button type="submit" class="btn btn-sm btn-outline-danger" onclick = sortRestaurants()>Sortiraj &nbsp;<i class="fa fa-sort-amount-asc"></i></button>
+        </form>
+        <hr>
       </div>
     </div>
+  </div>
+  
+  <div class="container mt-5 container" id="content">
     
-    <div class="container mt-5 container" id="content">
     
-      <div class="row">
-        <div class="col-lg-4">
-          <a href= "manufaktura.html">
-          <img class="img-fluid" src="../images/top-manufaktura.jpg">
-          </a>
-          <br><br>
-          
-        </div>
-        
-        
-        <div class="col-lg-8">
-          <div class="card" style="100%">
-            <div class="card-body">
-            <h5 class="card-title"><a href="manufaktura.html"> Manufaktura </a></h5>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Opština:<br></li>
-            <li class="list-group-item">Ocena:<br></li>
-            <li class="list-group-item">Tip kuhinje:<br></li>
-            <li class="list-group-item">Cena:<br></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <hr style="border-top: 5px solid #ccc; background: transparent;">
-
-
-      <div class="row">
-        <div class="col-lg-4">
-          <a href= "madera.html">
-          <img class="img-fluid" src="../images/top-madera.jpg">
-          </a>
-          <br><br>
-          
-        </div>
-        
-        
-        <div class="col-lg-8">
-          <div class="card" style="100%">
-            <div class="card-body">
-            <h5 class="card-title"><a href="madera.html"> Madera </a></h5>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Opština:<br></li>
-            <li class="list-group-item">Ocena:<br></li>
-            <li class="list-group-item">Tip kuhinje:<br></li>
-            <li class="list-group-item">Cena:<br></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <hr style="border-top: 5px solid #ccc; background: transparent;">
-
-
-      <div class="row">
-        <div class="col-lg-4">
-          <a href= "toro.html">
-          <img class="img-fluid" src="../images/top-toro.jpg">
-          </a>
-          <br><br>
-          
-        </div>
-        
-        
-        <div class="col-lg-8">
-          <div class="card" style="100%">
-            <div class="card-body">
-            <h5 class="card-title"><a href="toro.html"> Toro Latin Gastro Bar </a></h5>
-            </div>
-            <ul class="list-group list-group-flush">
-            <li class="list-group-item">Opština:<br></li>
-            <li class="list-group-item">Ocena:<br></li>
-            <li class="list-group-item">Tip kuhinje:<br></li>
-            <li class="list-group-item">Cena:<br></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <hr style="border-top: 5px solid #ccc; background: transparent;">
-      
-    </div>
-
-
   </div>
 
 
-   <!-- Footer -->
-  <footer class="footer mt-5 pt-4">
-      <div class="container ">
-        <div class="row text-center text-xs-center text-sm-left text-md-left">
-          <div class="col-xs-12 col-sm-2 offset-sm-2">
-            <h5 class="text-white">Kontakt</h5>
-            <ul class="list-unstyled quick-links">
-              <li><a href="about.html"><i class="fa"></i>O nama</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-2 offset-sm-1">
-            <h5 class="text-white">Sadržaj</h5>
-            <ul class="list-unstyled quick-links">
-              <li><a href="restaurants.html"><i class="fa"></i>Restorani</a></li>
-            </ul>
-          </div>
-          <div class="col-xs-12 col-sm-2 offset-sm-1">
-            <h5 class="text-white">Profil</h5>
-            <ul class="list-unstyled quick-links">
-              <li><a href="my-orders.html"><i class="fa"></i>Moje porudžbine</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-            <ul class="list-unstyled list-inline social text-center">
-              <li class="list-inline-item faa"><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
-              <li class="list-inline-item faa"><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
-              <li class="list-inline-item faa"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
-              <li class="list-inline-item faa"><a href="https://www.google.com"><i class="fab fa-google-plus"></i></a></li>
-              <li class="list-inline-item faa"><a href="https://www.envelope.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
-            </ul>
-          </div>
-          </hr>
-        </div>  
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-            <hr style="background-color:white;">
-            <p>Copyright 2019, Ana Dimitrijević Marko Todorović, Odsek za Softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</p>
-          </div>
-          
-        </div>  
+</div>
+
+
+<!-- Footer -->
+<footer class="footer mt-5 pt-4">
+  <div class="container ">
+    <div class="row text-center text-xs-center text-sm-left text-md-left">
+      <div class="col-xs-12 col-sm-2 offset-sm-2">
+        <h5 class="text-white">Kontakt</h5>
+        <ul class="list-unstyled quick-links">
+          <li><a href="about.html"><i class="fa"></i>O nama</a></li>
+        </ul>
       </div>
-    </footer>
+      <div class="col-xs-12 col-sm-2 offset-sm-1">
+        <h5 class="text-white">Sadržaj</h5>
+        <ul class="list-unstyled quick-links">
+          <li><a href="restaurants.html"><i class="fa"></i>Restorani</a></li>
+        </ul>
+      </div>
+      <div class="col-xs-12 col-sm-2 offset-sm-1">
+        <h5 class="text-white">Profil</h5>
+        <ul class="list-unstyled quick-links">
+          <li><a href="my-orders.html"><i class="fa"></i>Moje porudžbine</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+        <ul class="list-unstyled list-inline social text-center">
+          <li class="list-inline-item faa"><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
+          <li class="list-inline-item faa"><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+          <li class="list-inline-item faa"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+          <li class="list-inline-item faa"><a href="https://www.google.com"><i class="fab fa-google-plus"></i></a></li>
+          <li class="list-inline-item faa"><a href="https://www.envelope.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+        </ul>
+      </div>
+    </hr>
+  </div>  
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+      <hr style="background-color:white;">
+      <p>Copyright 2019, Ana Dimitrijević Marko Todorović, Odsek za Softversko inženjerstvo Elektrotehničkog fakulteta u Beogradu</p>
+    </div>
+    
+  </div>  
+</div>
+</footer>
 
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../js/foody.js"></script>
 
+<script language = "javascript">
+
+  var restaurants;
+  var prices;
+  var grades;
+  var htmlText;
+
+  function initialize() {
+    
+    restaurants = ['manufaktura', 'madera','toro'];
+    prices = ['$$', '$$$', '$$'];
+    grades = [4.8, 4.77, 4.8];
+    htmlText = new Array();
+    
+    htmlText[0] = "<div class='row'><div class='col-lg-4'><a href= 'manufaktura.html'><img class='img-fluid' src='../images/top-manufaktura.jpg'></a><br><br></div><div class='col-lg-8'><div class='card' style='100%'><div class='card-body'><h5 class='card-title'><a href='manufaktura.html'> Manufaktura </a></h5></div><ul class='list-group list-group-flush'><li class='list-group-item'>Opština: Stari grad<br></li><li class='list-group-item'>Ocena: 4.8<br></li><li class='list-group-item'>Tip kuhinje: Tradicionalna<br></li><li class='list-group-item'>Cena: $$<br></li></ul></div>        </div></div>"
+
+    htmlText[1] = "<div class='row'> <div class='col-lg-4'> <a href= 'madera.html'> <img class='img-fluid' src='../images/top-madera.jpg'> </a> <br><br> </div> <div class='col-lg-8'> <div class='card' style='100%'> <div class='card-body'> <h5 class='card-title'><a href='madera.html'> Madera </a></h5> </div> <ul class='list-group list-group-flush'> <li class='list-group-item'>Opština: Zvezdara<br></li> <li class='list-group-item'>Ocena: 4.77<br></li> <li class='list-group-item'>Tip kuhinje: Tradicionalna<br></li> <li class='list-group-item'>Cena: $$$<br></li> </ul> </div> </div> </div>"
+
+    htmlText[2] = "<div class='row'> <div class='col-lg-4'> <a href= 'toro.html'> <img class='img-fluid' src='../images/top-toro.jpg'> </a> <br><br> </div> <div class='col-lg-8'> <div class='card' style='100%'> <div class='card-body'> <h5 class='card-title'><a href='toro.html'> Toro Latin Gastro Bar </a></h5> </div> <ul class='list-group list-group-flush'> <li class='list-group-item'>Opština: Stari grad<br></li> <li class='list-group-item'>Ocena: 4.8<br></li> <li class='list-group-item'>Tip kuhinje: Meksička<br></li> <li class='list-group-item'>Cena: $$<br></li> </ul> </div> </div> </div>"
+
+  }
   
-  
+  function load() {
+   initialize();
+   fill();
+   if ('localStorage' in window && window.localStorage !== null) {
+    if(!localStorage.getItem('user')) {
+     document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='login.html'>Uloguj se</a>";
+   } else {
+     document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='restaurants.html' onclick = 'logout()'>Izloguj se</a>";
+   }
+ }
+}
+function logout() {
+ localStorage.removeItem('user');
+}
+
+
+function sortRestaurants() {
+  var name = document.getElementById('sortParameter').value; 
+  for (i=0;i<restaurants.length-1;i++){
+    for (j=i+1;j<restaurants.length;j++){
+      var cond;
+      if(name == "Naziv/Rastuće") { cond = restaurants[i].toLowerCase() > restaurants[j].toLowerCase(); }
+      if(name == "Naziv/Opadajuće") { cond = restaurants[i].toLowerCase() < restaurants[j].toLowerCase(); }
+      if(name == "Ocena/Rastuće") { cond = grades[i] > grades[j]; }
+      if(name == "Ocena/Opadajuće") { cond = grades[i] < grades[j]; }
+      if(name == "Cena/Rastuće") { cond = prices[i].length > prices[j].length; }
+      if(name == "Cena/Opadajuće") { cond = prices[i].length < prices[j].length; }
+      if (cond){
+        pom=restaurants[i];
+        restaurants[i]=restaurants[j];
+        restaurants[j]=pom;
+        
+        pom=prices[i];
+        prices[i]=prices[j];
+        prices[j]=pom;
+        
+        pom=grades[i];
+        grades[i]=grades[j];
+        grades[j]=pom;
+
+        pom=htmlText[i];
+        htmlText[i]=htmlText[j];
+        htmlText[j]=pom;
+      }
+    }
+  }
+  fill();
+    //  alert(name);
+  }
+  function fill(){
+    
+    var content=document.getElementById("content");
+    content.innerHTML="";
+    var string="";
+    
+    for (i=0;i<htmlText.length;i++){
+      string = string+htmlText[i];
+      string = string+"<br><hr style='border-top: 5px solid #ccc; background: transparent;'>"
+    }
+    
+    content.innerHTML=string;
+    
+  }
+</script>	
 
 </body>
 
