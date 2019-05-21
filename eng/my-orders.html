@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Your Foody cart </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="../css/shopping-cart.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+
+</head>
+
+
+<body onload = "load()">
+
+   <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-danger fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html"><img id="logo" src="../images/logo_transparent.png"> Foody </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="my-orders.html">Orders</a>
+          </li>         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restaurants
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="stari-grad.html"> Old town </a>
+              <a class="dropdown-item" href="dorcol.html"> Dorćol </a>
+              <a class="dropdown-item" href="vracar.html"> Vračar </a>
+              <a class="dropdown-item" href="zvezdara.html"> Zvezdara </a>
+            </div>
+          </li>
+          <li class="nav-item" id = "loginText">
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <div class="container" style="margin-top: 150px;">
+    <table id="cart" class="table table-hover table-condensed">
+      <thead>
+        <tr>
+          <th style="width:50%">Article</th>
+          <th style="width:10%">Price</th>
+          <th style="width:8%">Quantity</th>
+          <th style="width:22%" class="text-center">Total</th>
+          <th style="width:10%"></th>
+        </tr>
+      </thead>
+      <tbody id="userOrders">
+
+      </tbody>
+      <tfoot>
+        <tr class="visible-xs">
+          <td class="text-center"><strong>Totalni iznos xs</strong></td>
+        </tr>
+        <tr>
+
+          <td><a href="#" class="btn btn-warning" onclick="empty()"><i class="far fa-trash-alt"></i> Empty cart </a></td>
+          <td colspan="2" class="hidden-xs"></td>
+          <td class="hidden-xs text-center"><strong> Totalni iznos </strong></td>
+          <td><a href="javascript:createPDF()" class="btn btn-success"> Receipt <i class="far fa-file-pdf"></i></a></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+
+
+
+
+  <script>
+   function load() {
+
+     if ('localStorage' in window && window.localStorage !== null) {
+      if(!localStorage.getItem('user')) {
+       document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='login.html'>Login</a>";
+     } else {
+       document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='my-orders.html' onclick = 'logout()'>Logout</a>";
+     }
+
+   }
+
+
+   document.getElementById("userOrders").innerHTML = localStorage.getItem("ordersSession");
+ }
+
+  function empty() {
+  localStorage.removeItem("ordersSession");
+  window.open("my-orders.html");
+}
+
+  function createPDF(){
+
+    var pdf = new jsPDF('p', 'pt', 'letter');
+        // source can be HTML-formatted string, or a reference
+        // to an actual DOM element from which the text will be scraped.
+        //source = ('#content')[0];
+        source = document.getElementById("userOrders");
+
+        
+        specialElementHandlers = {
+           
+            '#bypassme': function (element, renderer) {
+                return true
+            }
+        };
+
+        margins = {
+            top: 80,
+            bottom: 60,
+            left: 40,
+            width: 522
+        };
+        
+        pdf.fromHTML(
+            source,
+            margins.left, 
+            margins.top, { 
+                'width': margins.width,
+                'elementHandlers': specialElementHandlers
+            },
+
+            function (dispose) {
+                pdf.save('Racun.pdf');
+            }, margins
+        );
+    }
+  
+
+
+
+
+
+
+</script>
+
+
+</body>
+
+</html>

@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title> Foody - Terminal </title>
+  <title> Foody - Manufaktura </title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,11 +16,13 @@
   <!-- Custom styles for this template -->
   <link href="../css/stylesheet-foody.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
 </head>
 
 <body onLoad="myMap()">
 
-	<!-- Navigation -->
+	 <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-danger fixed-top">
     <div class="container">
       <a class="navbar-brand" href="../index.html"><img id="logo" src="../images/logo_transparent.png"> Foody </a>
@@ -30,18 +32,20 @@
       <div class="collapse navbar-collapse text-center" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="about.html">O nama</a>
+            <a class="nav-link" href="about.html">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="restaurants.html">Restorani</a>
+            <a class="nav-link" href="my-orders.html">Orders</a>
           </li>         
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dostava
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restaurants
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="delivery.html">Informacije</a>
-              <a class="dropdown-item" href="my-orders.html">Moje porudžbine</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="stari-grad.html"> Old town </a>
+              <a class="dropdown-item" href="dorcol.html"> Dorćol </a>
+              <a class="dropdown-item" href="vracar.html"> Vračar </a>
+              <a class="dropdown-item" href="zvezdara.html"> Zvezdara </a>
             </div>
           </li>
           <li class="nav-item" id = "loginText">
@@ -52,12 +56,11 @@
     </div>
   </nav>
 
-  
 
   
   <!-- Header -->
   <header class="my-5 mb-5">
-    <div class="container h-100" style="background-repeat: no-repeat; background-size: 100% auto; background-image: url('../images/terminal/head.jpg'); width:100%; height: 350px !important;">
+    <div class="container h-100" style=" background-repeat: no-repeat; background-size: 100% auto; background-image: url('../images/top-manufaktura.jpg'); width:100%; height: 350px !important;">
     </div>
   </header>
 
@@ -68,9 +71,9 @@
       <div class="col-sm-12">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item" aria-current="page"> Početna </li>
-            <li class="breadcrumb-item" aria-current="page"> Restorani </li>
-            <li class="breadcrumb-item active" aria-current="page"> Terminal </li>
+            <li class="breadcrumb-item" aria-current="page"><a href = "../index.html"> Home </a></li>
+            <li class="breadcrumb-item" aria-current="page"><a href = "restaurants.html"> Restaurants </a> </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href = "manufaktura.html"><a href = ""> Manufaktura </a></li>
           </ol>
         </nav>
       </div>
@@ -79,28 +82,27 @@
 
     <div class="row">
       <div class="col-md-8 mb-5">
-        <h2>Terminal</h2>
+        <h2>Manufaktura</h2>
         <hr>
-        <p>Gastro Bar Terminal je lociran na Vračarskom platou, u neposrednoj blizini Hrama Svetog Save, sa izuzetnim položajem i predivnim odrazom osvetljenog Hrama u toku noći, u poslovno stambenoj zgradi savremene arhitekture, konceptualno sukobljava i povezuje tradicionalno i moderno.</p>
-        <p>Terminal Gastro Bar nudi ne samo vrhunsku hranu i piće nego i celokupnu atmosferu, nalik na gastro barove u velikim metropolama sveta.
-          Brinući o onome što goste pre svega privlači, a izuzetno obraćajući pažnju na ono što ih animira i zadržava, koncept smo usmerili u pravcu zabave i sveukupnog doživljaja. Živa muzika, vrhunsko ozvučenje, nesvakidašnji i neuniformisan raspored sedenja garantuju nezaboravan provod. Takođe se možemo pohvaliti svojom, pekarom, poslastičarnicom, juice bar-om, koktel bar-om i picerijom.
+        <p>Restaurant in downtown Belgrade, interesting concept, authentic. Restaurant Manufaktura in Kralja Petra Street is one of the places that remain permanently in memory. An unusual interior that imposes an optional and relaxed atmosphere, a very specific food that is served in a way that is not so common. Perhaps more importantly, all the foodstuffs used to prepare meals come from our climate, from organic farming. Great wines and brandy are also from the best domestic, private winery and distilleries, and all this can be bought at the restaurant itself.
         </p>
+        <p>Grilled specialties, buns, directly from the grill, the most famous pikanteries of Bulgarian, Greek and Macedonian cuisine, homemade treats originating from the best gastronomic tradition of our area ... Belgrade's restaurants are famous for the great offer of such ducks, but rarely all that is nice unified and presented as a Manufaktura restaurant.</p>
         
       </div>
       <div class="col-md-4 mb-5">
-        <h2>Kontakt</h2>
+        <h2>Contact</h2>
         <hr>
         <address>
-          <strong>Bore Stankovica 17</strong>
-          <br>11 000 Beograd
-          <br>Republika Srbija
+          <strong>Kralja Petra 13</strong>
+          <br>11 000 Belgrade
+          <br>Republic of Serbia
           <br>
         </address>
         <address>
-          <abbr title="Phone">Telefon:</abbr>
-          (+381) : 407 - 95 - 02
+          <abbr title="Phone">Telephone:</abbr>
+          (+381) : 218 - 00 - 44
           <br>
-          <abbr title="Hours">Radno vreme:</abbr>
+          <abbr title="Hours">Working hours:</abbr>
           9AM -2AM
         </address>
         <hr>
@@ -137,9 +139,9 @@
           </label>
         </form>
         <br>
-        <label id="manufaktura-rate"> Ocena : 4.4/5.0</label>
+        <label id="manufaktura-rate"> Rating : 4.8/5.0</label>
         <hr>
-        $$$, <label class="category"> Kineska </label> 
+        $$ , <label class="category"> Traditional </label> 
         <hr>
       </div>
     </div>
@@ -158,19 +160,19 @@
        </ol>
        <div class="carousel-inner" role="listbox">
          <!-- Slide One - Set the background image for this slide in the line below -->
-         <a class="carousel-item active" style="background-image: url('http://www.terminalgastrobar.rs/login/images/enterijer-terminal---1ac11919faae4355678906433474c5f6e3a20e5f.jpg')">
+         <a class="carousel-item active" style="background-image: url('../images/manufaktura/lokal-1.jpg')">
           
          </a>
          <!-- Slide Two - Set the background image for this slide in the line below -->
-         <div class="carousel-item" style="background-image: url('http://www.terminalgastrobar.rs/login/images/3965---24c959e3c600ea2919cc74fd2e3f17b9cf2e5f7c.jpg')">
+         <div class="carousel-item" style="background-image: url('../images/manufaktura/lokal-2.jpg')">
           
          </div>
          <!-- Slide Three - Set the background image for this slide in the line below -->
-         <div class="carousel-item" style="background-image: url('http://www.terminalgastrobar.rs/login/images/terminal-enterijer---d1b403cbaecc8e4527717c8086a588263e0b9db8.jpg')">
+         <div class="carousel-item" style="background-image: url('../images/manufaktura/lokal-3.jpg')">
           
          </div>
          
-         <div class="carousel-item" style="background-image: url('http://www.terminalgastrobar.rs/login/images/1168---4bc59babab03aeeb405fa0280fd0c22d240f40d0.jpg')">
+         <div class="carousel-item" style="background-image: url('../images/manufaktura/lokal-4.jpg')">
           
          </div>
        </div>
@@ -191,46 +193,58 @@
 
  <hr>
 
- <h1 class="my-4">Izdvajamo iz našeg menija: </h1>
+ <h1 class="my-4">Highlights from our menu: </h1>
 
 
  <div class="row">
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/1.jpg" alt="">
+      <img class="card-img-top" src="../images/manufaktura/1.jpg" alt="" id="img1">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-      </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
-      </div>
+        <h4 class="card-title" id="item1">Pazar plate</h4>
+        <p class="card-text">
+         <label id="desc1">Sugar, beef prosciutto, kulen turkey, shady and golden cheese </label>
+         <br>
+         Price: <label id="price1"> 620 </label> RSD
+       </p>
+     </div>
+     <div class="card-footer text-center">
+      <input type="button" class="btn btn-outline-danger" onClick="order(1)" value="Order"></input>
     </div>
   </div>
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/2.jpg" alt="">
-      <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-      </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
-      </div>
+</div>
+<div class="col-md-4 mb-5">
+  <div class="card h-100">
+    <img class="card-img-top" src="../images/manufaktura/2.jpg" alt="" id="img2">
+    <div class="card-body">
+      <h4 class="card-title" id="item2">Dolma</h4>
+      <p class="card-text">
+       <label id="desc2">Greek cheese in tomato, mashed potatoes</label>
+       <br> 
+       Price: <label id="price2"> 450 <label> RSD
+       </p>
+     </div>
+     <div class="card-footer text-center">
+      <input type="button" class="btn btn-outline-danger" onClick="order(2)" value="Order"></input>
     </div>
   </div>
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/3.jpg" alt="">
-      <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-      </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
-      </div>
-    </div>
-  </div>
+</div>
+<div class="col-md-4 mb-5">
+  <div class="card h-100">
+    <img class="card-img-top" src="../images/manufaktura/3.jpg" alt="" id="img3">
+    <div class="card-body">
+      <h4 class="card-title" id="item3">Smoked pork ribs</h4>
+      <p class="card-text">
+       <label id="desc3">Smoked pork ribs with bakery potatoes </label> 
+       <br> 
+       Price: <label id="price3"> 780 </label> RSD
+     </p>
+   </div>
+   <div class="card-footer text-center">
+     <input type="button" class="btn btn-outline-danger" onClick="order(3)" value="Order"></input>
+   </div>
+ </div>
+</div>
 </div>
 
 <hr>
@@ -238,40 +252,52 @@
 <div class="row">
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/4.jpg" alt="">
+      <img class="card-img-top" src="../images/manufaktura/4.jpg" alt="" id="img4">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
-      </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
-      </div>
-    </div>
+        <h4 class="card-title" id="item4">Winter turkey</h4>
+        <p class="card-text">
+         <label id="desc4">Sour cabbage, peppers, tomatoes, hot peppers</label>
+         <br> 
+         Price: <label id="price4"> 290 </label> RSD
+       </p>
+     </div>
+     <div class="card-footer text-center">
+       <input type="button" class="btn btn-outline-danger" onClick="order(4)" value="Order"></input>
+     </div>
+   </div>
+ </div>
+ <div class="col-md-4 mb-5">
+  <div class="card h-100">
+    <img class="card-img-top" src="../images/manufaktura/5.jpg" alt="" id="img5">
+    <div class="card-body">
+      <h4 class="card-title" id="item5">Fried peppers</h4>
+      <p class="card-text">
+       <label id="desc5"> Leskovačka roast pepper, stuffed with cheese </label>
+       <br> 
+       Price: <label id="price5"> 400 </label> RSD
+     </p>
+   </div>
+   <div class="card-footer text-center">
+    <input type="button" class="btn btn-outline-danger" onClick="order(5)" value="Order"></input>
   </div>
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/5.jpg" alt="">
-      <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
-      </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4 mb-5">
-    <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/6.jpg" alt="">
-      <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-      </div>
-      <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+<div class="col-md-4 mb-5">
+  <div class="card h-100">
+    <img class="card-img-top" src="../images/manufaktura/6.jpg" alt="" id="img6">
+    <div class="card-body">
+      <h4 class="card-title" id="item6">Karadjordje's steak</h4>
+      <p class="card-text">
+       <label id="desc6">Karadjordje's steak, homemade bakery potato, tartar sauce</label>
+       <br> 
+       Price: <label id="price6"> 680 </label> RSD
+     </p>
+   </div>
+   <div class="card-footer text-center">
+     <input type="button" class="btn btn-outline-danger" onClick="order(6)" value="Order"></input>
+   </div>
+ </div>
+</div>
 </div>    
 
 
@@ -287,6 +313,8 @@
 
 
 
+
+
 </div>
 <!-- /.container -->
 
@@ -295,21 +323,21 @@
   <div class="container ">
     <div class="row text-center text-xs-center text-sm-left text-md-left">
       <div class="col-xs-12 col-sm-2 offset-sm-2">
-        <h5 class="text-white">Kontakt</h5>
+        <h5 class="text-white">Contact</h5>
         <ul class="list-unstyled quick-links">
-          <li><a href="about.html"><i class="fa"></i>O nama</a></li>
+          <li><a href="about.html"><i class="fa"></i>About us</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-2 offset-sm-1">
-        <h5 class="text-white">Sadržaj</h5>
+        <h5 class="text-white">Content</h5>
         <ul class="list-unstyled quick-links">
-          <li><a href="restaurants.html"><i class="fa"></i>Restorani</a></li>
+          <li><a href="restaurants.html"><i class="fa"></i>Restaurants</a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-2 offset-sm-1">
-        <h5 class="text-white">Profil</h5>
+        <h5 class="text-white">Profile</h5>
         <ul class="list-unstyled quick-links">
-          <li><a href="my-orders.html"><i class="fa"></i>Moje porudžbine</a></li>
+          <li><a href="my-orders.html"><i class="fa"></i>My orders</a></li>
         </ul>
       </div>
     </div>
@@ -343,8 +371,11 @@
 <!-- Googlemaps JavaScript -->
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
-<script>
+
+
+ <script>
  function myMap() {
+	load();
   var mapOptions1 = {
    center: new google.maps.LatLng(44.819074, 20.453543),
    zoom: 18,
@@ -358,22 +389,24 @@
    mapTypeId: google.maps.MapTypeId.HYBRID
  }
  var map2 = new google.maps.Map(document.getElementById("map2"), mapOptions);
- 
- 
- load();
- 
+  
 }
 function load() {
+
  if ('localStorage' in window && window.localStorage !== null) {
   if(!localStorage.getItem('user')) {
-   document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='login.html'>Uloguj se</a>";
+   document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='login.html'>Login</a>";
  } else {
-   document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='terminal.html' onclick = 'logout()'>Izloguj se</a>";
+   document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='manufaktura.html' onclick = 'logout()'>Logout</a>";
  }
 }
 
 }
+
+
+
 </script>
+
 </body>
 
 </html>
