@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title> Foody - Toro Latin Gastro Bar </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/stylesheet-foody.css" rel="stylesheet">
+
+</head>
+
+<body onLoad="myMap()">
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-danger fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html"><img id="logo" src="../images/logo_transparent.png"> Foody </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="my-orders.html">Orders</a>
+          </li>         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restaurants
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="stari-grad.html"> Old city </a>
+              <a class="dropdown-item" href="dorcol.html"> Dorcol </a>
+              <a class="dropdown-item" href="vracar.html"> Vracar </a>
+              <a class="dropdown-item" href="zvezdara.html"> Zvezdara </a>
+            </div>
+          </li>
+          <li class="nav-item" id = "loginText">
+            
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<!-- Header -->
+<header class="my-5 mb-5">
+  <div class="container h-100" style="background-repeat: no-repeat; background-size: 100% auto; background-image: url('../images/banner.jpg'); width:100%; height: 350px !important;">
+  </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+ <div class="row my-4">
+  <div class="col-sm-12">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item" aria-current="page"><a href = "../index.html"> Home </a></li>
+        <li class="breadcrumb-item" aria-current="page"><a href = "restaurants.html"> Restaurants </a></li>
+        <li class="breadcrumb-item active" aria-current="page"><a href = "toro.html"> Toro </a></li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-8 mb-5">
+    <h2>Toro Latin Gastro Bar</h2>
+    <hr>
+    <p>One of the best worldwide chefs Ričard Sandoval, in cooperation with restaurant Small factory of taste, has opened his first restaurant in Europe, and exactly in Belgrade - Toro Latin Gastrobar, which is located in Concrete Hall. Toro Latin Gastrobar is based on concept "small plates".It means that every dish is cut into small pieces, so everyone could try everything.
+    </p>
+    <p>The kitchen is Latin American with the influence of Asian, and all dishes are prepared from fresh meat and vegetables, with minimal use of fat. Sandoval personally, from the farm in Zlatibor, chooses the meat to be served, and all the meat is prepared in this local in the Josper Grill. Here, as an appetizer, gumacamola and smoked trout with tortilla chips are recommended. Among the other specialties are the chifa style fried rice, beefsteak on the spit (in the Peruvian marinade) and the ocopa sauce (peanut sauce, milk, biscuits, hot peppers and black and white onions), cocas style flat bread, zardande style - Mexican style fish grilled, hot-dog toro, toro glass ... </p>
+    
+  </div>
+  <div class="col-md-4 mb-5">
+    <h2>Contact</h2>
+    <hr>
+    <address>
+      <strong>Karađorđeva 2</strong>
+      <br>11 000 Beograd
+      <br>Republic of Serbia
+      <br>
+    </address>
+    <address>
+      <abbr title="Phone">Phone number:</abbr>
+      (+381) : 303 - 43 - 42
+      <br>
+      <abbr title="Hours">Working time:</abbr>
+      9AM -2AM
+    </address>
+    <hr>
+    <form class="rating">
+      <label>
+        <input type="radio" name="stars" value="1" />
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="2" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="3" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>   
+      </label>
+      <label>
+        <input type="radio" name="stars" value="4" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+      <label>
+        <input type="radio" name="stars" value="5" />
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+        <span class="icon">★</span>
+      </label>
+    </form>
+    <br>
+    <label id="manufaktura-rate"> Rating : 4.8/5.0</label>
+    <hr>
+    $$ , <label class="category"> Mexican </label> 
+    <hr>
+  </div>
+</div>
+
+
+
+
+<div class="row">
+  <div class="col-lg-12">
+   <div id="gallery" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+     <li data-target="#gallery" data-slide-to="0" class="active"></li>
+     <li data-target="#gallery" data-slide-to="1"></li>
+     <li data-target="#gallery" data-slide-to="2"></li>
+     <li data-target="#gallery" data-slide-to="3"></li>
+   </ol>
+   <div class="carousel-inner" role="listbox">
+     <!-- Slide One - Set the background image for this slide in the line below -->
+     <a class="carousel-item active" style="background-image: url('../images/toro/lokal-1.jpg')">
+      
+     </a>
+     <!-- Slide Two - Set the background image for this slide in the line below -->
+     <div class="carousel-item" style="background-image: url('../images/toro/lokal-2.jpg')">
+      
+     </div>
+     <!-- Slide Three - Set the background image for this slide in the line below -->
+     <div class="carousel-item" style="background-image: url('../images/toro/lokal-3.jpg')">
+      
+     </div>
+     
+     <div class="carousel-item" style="background-image: url('../images/toro/lokal-4.jpg')">
+      
+     </div>
+   </div>
+   <a class="carousel-control-prev" href="#gallery" role="button" data-slide="prev">
+     <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+     <span class="sr-only">Previous</span>
+   </a>
+   <a class="carousel-control-next" href="#gallery" role="button" data-slide="next">
+     <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+     <span class="sr-only">Next</span>
+   </a>
+ </div>
+</div>	
+</div>
+
+
+
+
+<hr>
+
+<h1 class="my-4">Highlighted from our menu: </h1>
+
+
+<div class="row">
+  <div class="col-md-4 mb-5">
+    <div class="card h-100">
+      <img class="card-img-top" src="../images/toro/1.jpg" alt="" id="img1">
+      <div class="card-body">
+        <h4 class="card-title" id="item1">Toro steak</h4>
+        <p class="card-text">
+          <label id="desc1"> Marinated ramstake with caramelized onions</label>
+          <br> 
+          Price: <label id="price1"> 1890 </label> RSD
+        </p>
+      </div>
+      <div class="card-footer text-center">
+        <input type="button" class="btn btn-outline-danger" onClick="order(1)" value="Naruči"></input>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-5">
+    <div class="card h-100">
+      <img class="card-img-top" src="../images/toro/2.jpg" alt="" id="img2">
+      <div class="card-body">
+        <h4 class="card-title" id="item2">Baking potatoes in bacon wrap</h4>
+        <p class="card-text">
+          <label id="desc2"> Baking potatoes in bacon wrap with cream and kale </label>
+          <br> 
+          Price: <label id="price2"> 690 </label> RSD 
+        </p>
+      </div>
+      <div class="card-footer text-center">
+       <input type="button" class="btn btn-outline-danger" onClick="order(2)" value="Naruči"></input>
+     </div>
+   </div>
+ </div>
+ <div class="col-md-4 mb-5">
+  <div class="card h-100">
+    <img class="card-img-top" src="../images/toro/3.jpg" alt="" id="img3">
+    <div class="card-body">
+      <h4 class="card-title" id="item3">Spice tuna rolls</h4>
+      <p class="card-text">
+        <label id="desc3"> Chiporle aioli, spiced tuna, tobako. </label>
+        <br> Price: <label id="price3"> 770 </label> RSD
+      </p>
+    </div>
+    <div class="card-footer text-center">
+     <input type="button" class="btn btn-outline-danger" onClick="order(3)" value="Naruči"></input>
+   </div>
+ </div>
+</div>
+</div>
+
+<hr>
+
+<div class="row">
+  <div class="col-md-4 mb-5">
+    <div class="card h-100">
+      <img class="card-img-top" src="../images/toro/4.jpg" alt="" id="img4">
+      <div class="card-body">
+        <h4 class="card-title" id="item4">Takos with hot peppers</h4>
+        <p class="card-text">
+          <label id="desc4">Takos with hot peppers, melted cheese, bacon </label>
+          <br> Price: <label id="price4"> 490 </label> RSD 
+        </p>
+      </div>
+      <div class="card-footer text-center">
+        <input type="button" class="btn btn-outline-danger" onClick="order(4)" value="Naruči"></input>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 mb-5">
+    <div class="card h-100">
+      <img class="card-img-top" src="../images/toro/5.jpg" alt="" id="img5">
+      <div class="card-body">
+        <h4 class="card-title" id="item5">Salmon roasted with marinade</h4>
+        <p class="card-text">
+          <label id="desc5"> Salmon baked with marinated kernels, mushrooms, carrots, boars, salmon
+            <br> Price: <label id="price5"> 1360 </label> RSD 
+          </p>
+        </div>
+        <div class="card-footer text-center">
+          <input type="button" class="btn btn-outline-danger" onClick="order(5)" value="Naruči"></input>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-5">
+      <div class="card h-100">
+        <img class="card-img-top" src="../images/toro/6.jpg" alt="" id="img6">
+        <div class="card-body">
+          <h4 class="card-title" id="item6">Roller with crispy gamborins</h4>
+          <p class="card-text">
+            <label id="desc6"> Roller with carob gameboard, handmade aioli, green tobiko caviar
+              <br> Price: <label id="price6"> 1360 </label> RSD 
+            </p>
+          </div>
+          <div class="card-footer text-center">
+            <input type="button" class="btn btn-outline-danger" onClick="order(6)" value="Naruči"></input>
+          </div>
+        </div>
+      </div>
+    </div>      
+
+
+    <h1 class="my-4">Visit us on address: </h1>
+
+    <div class="map-container">
+    	<div class="row">
+    		<div class="col-lg-12">
+          <div id="map3" style="width:100%;height:300px"></div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="footer mt-5 pt-4">
+    <div class="container ">
+      <div class="row text-center text-xs-center text-sm-left text-md-left">
+        <div class="col-xs-12 col-sm-2 offset-sm-2">
+          <h5 class="text-white">Contact</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="about.html"><i class="fa"></i>About us</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-2 offset-sm-1">
+          <h5 class="text-white">Content</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="restaurants.html"><i class="fa"></i>Restaurants</a></li>
+          </ul>
+        </div>
+        <div class="col-xs-12 col-sm-2 offset-sm-1">
+          <h5 class="text-white">Profile</h5>
+          <ul class="list-unstyled quick-links">
+            <li><a href="my-orders.html"><i class="fa"></i>My orders</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+          <ul class="list-unstyled list-inline social text-center">
+            <li class="list-inline-item faa"><a href="https://www.facebook.com"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="list-inline-item faa"><a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a></li>
+            <li class="list-inline-item faa"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+            <li class="list-inline-item faa"><a href="https://www.google.com"><i class="fab fa-google-plus"></i></a></li>
+            <li class="list-inline-item faa"><a href="https://www.envelope.com" target="_blank"><i class="fa fa-envelope"></i></a></li>
+          </ul>
+        </div>
+      </hr>
+    </div>  
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+        <hr style="background-color:white;">
+        <p>Copyright 2019, Ana Dimitrijević Marko Todorović, School of Electrical Engineering, University of Belgrade, Serbia</p>
+      </div>
+      
+    </div>  
+  </div>
+</footer>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Googlemaps JavaScript -->
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+
+<script src="../js/order.js"></script>
+
+
+<script>
+
+ function myMap() {
+  
+  var mapOptions3 = {
+    center: new google.maps.LatLng(44.820600, 20.448518),
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+  }
+  var map3 = new google.maps.Map(document.getElementById("map3"), mapOptions3);
+  
+  load();
+  
+  
+}
+function load() {
+ if ('localStorage' in window && window.localStorage !== null) {
+  if(!localStorage.getItem('user')) {
+   document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='login.html'>Log in</a>";
+ } else {
+   document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='toro.html' onclick = 'logout()'>Log out</a>";
+ }
+}
+
+}
+</script>
+
+</body>
+
+</html>
