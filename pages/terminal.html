@@ -36,18 +36,21 @@
             <a class="nav-link" href="restaurants.html">Restorani</a>
           </li>         
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dostava
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Restorani
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
-              <a class="dropdown-item" href="delivery.html">Informacije</a>
-              <a class="dropdown-item" href="my-orders.html">Moje porudžbine</a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="stari-grad.html"> Stari grad </a>
+              <a class="dropdown-item" href="dorcol.html"> Dorćol </a>
+              <a class="dropdown-item" href="vracar.html"> Vračar </a>
+              <a class="dropdown-item" href="zvezdara.html"> Zvezdara </a>
             </div>
           </li>
           <li class="nav-item" id = "loginText">
             
           </li>
         </ul>
+		<a href="../eng/terminal.html"><img src="../images/english.png" style="width:60px; height:30px;"></a>
       </div>
     </div>
   </nav>
@@ -68,9 +71,9 @@
       <div class="col-sm-12">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item" aria-current="page"> Početna </li>
-            <li class="breadcrumb-item" aria-current="page"> Restorani </li>
-            <li class="breadcrumb-item active" aria-current="page"> Terminal </li>
+            <li class="breadcrumb-item" aria-current="page"><a href = "../index.html"> Početna </a> </li>
+            <li class="breadcrumb-item" aria-current="page"><a href = "restaurants.html"> Restorani </a> </li>
+            <li class="breadcrumb-item active" aria-current="page"><a href = "terminal.html"> Terminal </a> </li>
           </ol>
         </nav>
       </div>
@@ -106,7 +109,7 @@
         <hr>
         <form class="rating">
           <label>
-            <input type="radio" name="stars" value="1" />
+            <input type="radio" name="stars" value="1" onClick = "rate('manufaktura',1)"/>
             <span class="icon">★</span>
           </label>
           <label>
@@ -197,37 +200,49 @@
  <div class="row">
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/1.jpg" alt="">
+      <img class="card-img-top" src="../images/terminal/1.jpg" alt="" id = "img1">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+        <h4 class="card-title" id = "item1">"Check in" meze</h4>
+        <p class="card-text">
+			<label id = "desc1">njeguška i goveđa pršuta, kulen, domaći sir, kajmak, masline i prepečen hleb.</label>
+			<br>
+			Cena: <label id = "price1"> 1090 </label> RSD
+		</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
+        <input type="button" class="btn btn-outline-danger" onClick="order(1)" value="Naruči"></input>
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/2.jpg" alt="">
+      <img class="card-img-top" src="../images/terminal/2.jpg" alt="" id = "img2">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+        <h4 class="card-title" id = "item2">Ćuretina pistaći</h4>
+        <p class="card-text">
+			<label id = "desc1">ćuretina, pistaći, mix salata, paprika, šargarepa i dresing.</label>
+			<br>
+			Cena: <label id = "price2"> 890 </label> RSD
+		</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
+        <input type="button" class="btn btn-outline-danger" onClick="order(2)" value="Naruči"></input>
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/3.jpg" alt="">
+      <img class="card-img-top" src="../images/terminal/3.jpg" alt="" id = "img3">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+        <h4 class="card-title" id = "item3">Grilovana hobotnica</h4>
+        <p class="card-text">
+			<label id = "desc1">mekana hobotnica servirana sa mladim krompirom i spanaćem sa primavera sosom.</label>
+			<br>
+			Cena: <label id = "price3"> 2390 </label> RSD
+		</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
+        <input type="button" class="btn btn-outline-danger" onClick="order(3)" value="Naruči"></input>
       </div>
     </div>
   </div>
@@ -238,37 +253,49 @@
 <div class="row">
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/4.jpg" alt="">
+      <img class="card-img-top" src="../images/terminal/4.jpg" alt="" id = "img4">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+        <h4 class="card-title" id = "item4">Ćuretina saltimboka</h4>
+        <p class="card-text">
+			<label id = "desc1">zapečena ćuretina sa pršutom, sosom od žalfije, servirana sa krompirićima i povrćem.</label>
+			<br>
+			Cena: <label id = "price4"> 1090 </label> RSD
+		</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
+        <input type="button" class="btn btn-outline-danger" onClick="order(4)" value="Naruči"></input>
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/5.jpg" alt="">
+      <img class="card-img-top" src="../images/terminal/5.jpg" alt="" id = "img5">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+        <h4 class="card-title" id = "item5">Palačinka terminal</h4>
+        <p class="card-text">
+			<label id = "desc1">palačinka na puteru sa maskarpone sirom, kajsijama i šumskim voćem.</label>
+			<br>
+			Cena: <label id = "price5"> 790 </label> RSD
+		</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
+        <input type="button" class="btn btn-outline-danger" onClick="order(5)" value="Naruči"></input>
       </div>
     </div>
   </div>
   <div class="col-md-4 mb-5">
     <div class="card h-100">
-      <img class="card-img-top" src="../images/terminal/6.jpg" alt="">
+      <img class="card-img-top" src="../images/terminal/6.jpg" alt="" id = "img6">
       <div class="card-body">
-        <h4 class="card-title">Card title</h4>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+        <h4 class="card-title" id = "item6">Mlinci sa ćuretinom</h4>
+        <p class="card-text">
+			<label id = "desc1">zapečeni mlinci, ćuretina, gorgonzola, mileram, mocarela i parmezan.</label>
+			<br>
+			Cena: <label id = "price6"> 890 </label> RSD
+		</p>
       </div>
       <div class="card-footer text-center">
-        <a href="#" class="btn btn-outline-danger">Naruči</a>
+        <input type="button" class="btn btn-outline-danger" onClick="order(6)" value="Naruči"></input>
       </div>
     </div>
   </div>
@@ -343,8 +370,12 @@
 <!-- Googlemaps JavaScript -->
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
+<script src="../js/order.js"></script>
+
 <script>
  function myMap() {
+
+  load();
   var mapOptions1 = {
    center: new google.maps.LatLng(44.819074, 20.453543),
    zoom: 18,
@@ -358,9 +389,7 @@
    mapTypeId: google.maps.MapTypeId.HYBRID
  }
  var map2 = new google.maps.Map(document.getElementById("map2"), mapOptions);
- 
- 
- load();
+
  
 }
 function load() {
@@ -374,6 +403,9 @@ function load() {
 
 }
 </script>
+
+<script src = "../js/rate.js"></script>
+
 </body>
 
 </html>

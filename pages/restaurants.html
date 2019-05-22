@@ -52,6 +52,7 @@
             
           </li>
         </ul>
+		<a href="../eng/restaurants.html"><img src="../images/english.png" style="width:60px; height:30px;"></a>
       </div>
     </div>
   </nav>
@@ -166,7 +167,6 @@
 
   function initialize() {
     
-	alert("initialize");
 	
     restaurants = ['manufaktura', 'madera','toro'];
     prices = ['$$', '$$$', '$$'];
@@ -200,6 +200,7 @@
   function load() {
    
    //alert(localStorage.getItem("loaded"));
+   //alert(localStorage.getItem("htmlText[0]"));
    //alert(localStorage.getItem("htmlText[0]"));
    
    if(localStorage.getItem("loaded") != "yes")initialize();
@@ -258,12 +259,12 @@ function sortRestaurants() {
   for (i=0;i<restaurants.length-1;i++){
     for (j=i+1;j<restaurants.length;j++){
       var cond;
-      if(name == "Naziv/Rastuće") { cond = restaurants[i].toLowerCase() < restaurants[j].toLowerCase(); }
-      if(name == "Naziv/Opadajuće") { cond = restaurants[i].toLowerCase() > restaurants[j].toLowerCase(); }
-      if(name == "Ocena/Rastuće") { cond = grades[i] < grades[j]; }
-      if(name == "Ocena/Opadajuće") { cond = grades[i] > grades[j]; }
-      if(name == "Cena/Rastuće") { cond = prices[i].length < prices[j].length; }
-      if(name == "Cena/Opadajuće") { cond = prices[i].length > prices[j].length; }
+      if(name == "Naziv/Rastuće") { cond = restaurants[i].toLowerCase() > restaurants[j].toLowerCase(); }
+      if(name == "Naziv/Opadajuće") { cond = restaurants[i].toLowerCase() < restaurants[j].toLowerCase(); }
+      if(name == "Ocena/Rastuće") { cond = grades[i] > grades[j]; }
+      if(name == "Ocena/Opadajuće") { cond = grades[i] < grades[j]; }
+      if(name == "Cena/Rastuće") { cond = prices[i].length > prices[j].length; }
+      if(name == "Cena/Opadajuće") { cond = prices[i].length < prices[j].length; }
       if (cond){
         pom=restaurants[i];
         restaurants[i]=restaurants[j];

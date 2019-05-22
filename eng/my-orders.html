@@ -27,7 +27,7 @@
    <!-- Navigation -->
   <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-danger fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="../index.html"><img id="logo" src="../images/logo_transparent.png"> Foody </a>
+      <a class="navbar-brand" href="../index-eng.html"><img id="logo" src="../images/logo_transparent.png"> Foody </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon "></span>
       </button>
@@ -54,6 +54,7 @@
             
           </li>
         </ul>
+		<a href="../pages/my-orders.html"><img src="../images/serbian.png" style="width:60px; height:30px;"></a>
       </div>
     </div>
   </nav>
@@ -77,14 +78,14 @@
       </tbody>
       <tfoot>
         <tr class="visible-xs">
-          <td class="text-center"><strong>Totalni iznos xs</strong></td>
+          <td class="text-center"><strong id="total1"></strong></td>
         </tr>
         <tr>
 
           <td><a href="#" class="btn btn-warning" onclick="empty()"><i class="far fa-trash-alt"></i> Empty cart </a></td>
           <td colspan="2" class="hidden-xs"></td>
-          <td class="hidden-xs text-center"><strong> Totalni iznos </strong></td>
-          <td><a href="javascript:createPDF()" class="btn btn-success"> Receipt <i class="far fa-file-pdf"></i></a></td>
+          <td class="hidden-xs text-center"><strong id="total2"> </strong></td>
+          <td><a href="javascript:createPDF()" class="btn btn-success"> Bill <i class="far fa-file-pdf"></i></a></td>
         </tr>
       </tfoot>
     </table>
@@ -95,7 +96,7 @@
 
 
   <script>
-   function load() {
+  function load() {
 
      if ('localStorage' in window && window.localStorage !== null) {
       if(!localStorage.getItem('user')) {
@@ -106,12 +107,20 @@
 
    }
 
-
    document.getElementById("userOrders").innerHTML = localStorage.getItem("ordersSession");
+   
+   if (localStorage.getItem("receipt") != null) { 
+   
+   document.getElementById("total1").innerHTML =  localStorage.getItem("receipt") + " RSD";
+   document.getElementById("total2").innerHTML =  localStorage.getItem("receipt") + " RSD";
+   
+   }
+   
  }
 
   function empty() {
   localStorage.removeItem("ordersSession");
+  localStorage.removeItem("receipt");
   window.open("my-orders.html");
 }
 
@@ -121,9 +130,9 @@
         // source can be HTML-formatted string, or a reference
         // to an actual DOM element from which the text will be scraped.
         //source = ('#content')[0];
+		
         source = document.getElementById("userOrders");
 
-        
         specialElementHandlers = {
            
             '#bypassme': function (element, renderer) {
@@ -152,6 +161,7 @@
         );
     }
   
+
 
 
 

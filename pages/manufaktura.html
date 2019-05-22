@@ -52,6 +52,7 @@
             
           </li>
         </ul>
+		<a href="../eng/manufaktura.html"><img src="../images/english.png" style="width:60px; height:30px;"></a>
       </div>
     </div>
   </nav>
@@ -108,29 +109,29 @@
         <hr>
         <form class="rating">
           <label>
-            <input type="radio" name="stars" value="1" />
+            <input type="radio" name="stars" value="1" onClick = "rate('manufaktura',1)"/>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="2" />
+            <input type="radio" name="stars" value="2" onClick = "rate('manufaktura',2)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="3" />
+            <input type="radio" name="stars" value="3" onClick = "rate('manufaktura',3)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>   
           </label>
           <label>
-            <input type="radio" name="stars" value="4" />
+            <input type="radio" name="stars" value="4" onClick = "rate('manufaktura',4)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="5" />
+            <input type="radio" name="stars" value="5" onClick = "rate('manufaktura',5)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
@@ -139,7 +140,7 @@
           </label>
         </form>
         <br>
-        <label id="manufaktura-rate"> Ocena : 4.8/5.0</label>
+        <label id="manufaktura-rate"> Ocena : <label id = "ratingmanufaktura"></label>/5.0</label>
         <hr>
         $$ , <label class="category"> Tradicionalna </label> 
         <hr>
@@ -221,7 +222,7 @@
       <p class="card-text">
        <label id="desc2">Grčke sarmice u paradajzu, pire krompir</label>
        <br> 
-       Cena: <label id="price2"> 450 <label> RSD
+       Cena: <label id="price2"> 450 </label> RSD
        </p>
      </div>
      <div class="card-footer text-center">
@@ -371,7 +372,8 @@
 <!-- Googlemaps JavaScript -->
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
-
+<script src="../js/order.js"></script>
+<script src="../js/rate.js"></script>
 
  <script>
  function myMap() {
@@ -391,7 +393,9 @@
  var map2 = new google.maps.Map(document.getElementById("map2"), mapOptions);
   
 }
-function load() {
+
+
+ function load() {
 
  if ('localStorage' in window && window.localStorage !== null) {
   if(!localStorage.getItem('user')) {
@@ -400,8 +404,24 @@ function load() {
    document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='manufaktura.html' onclick = 'logout()'>Izloguj se</a>";
  }
 }
+	var restaurants = [];
+	restaurants[0] = localStorage.getItem("restaurants[0]");
+	restaurants[1] = localStorage.getItem("restaurants[1]");
+	restaurants[2] = localStorage.getItem("restaurants[2]");
+	
+	var grades = [];
+	grades[0] = localStorage.getItem("grades[0]");
+	grades[1] = localStorage.getItem("grades[1]");
+	grades[2] = localStorage.getItem("grades[2]");
 
+	var i;
+	for(i = 0; i < restaurants.length; i++) {
+		if(restaurants[i] == "manufaktura"){
+		document.getElementById("ratingmanufaktura").innerHTML = grades[i];
+		}
+	}
 }
+
 
 
 

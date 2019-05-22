@@ -34,8 +34,9 @@ function fillUsers() {
 					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='index.html' onclick = 'logout()'>Izloguj se</a>";
 				}
 			}
-			
+			if(localStorage.getItem("loaded") != "yes")initialize();
 }
+
 
 function login(){
 				if ('localStorage' in window && window.localStorage !== null) {
