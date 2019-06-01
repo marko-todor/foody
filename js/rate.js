@@ -5,6 +5,8 @@ function rate(restaurant, newGrade) {
 	restaurants[0] = localStorage.getItem("restaurants[0]");
 	restaurants[1] = localStorage.getItem("restaurants[1]");
 	restaurants[2] = localStorage.getItem("restaurants[2]");
+	restaurants[3] = localStorage.getItem("restaurants[3]");
+	restaurants[4] = localStorage.getItem("restaurants[4]");
 	
 	var i;
 	var j;
@@ -23,5 +25,5 @@ function rate(restaurant, newGrade) {
 	
 	var toUpdate = "rating" + restaurant;
 	document.getElementById(toUpdate).innerHTML = newRating;
-	
+	 
 }

@@ -41,8 +41,8 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="stari-grad.html"> Old city </a>
-              <a class="dropdown-item" href="dorcol.html"> Dorcol </a>
-              <a class="dropdown-item" href="vracar.html"> Vracar </a>
+              <a class="dropdown-item" href="dorcol.html"> Dorćol </a>
+              <a class="dropdown-item" href="vracar.html"> Vračar </a>
               <a class="dropdown-item" href="zvezdara.html"> Zvezdara </a>
             </div>
           </li>
@@ -94,7 +94,7 @@
         <h2>Contact</h2>
         <hr>
         <address>
-          <strong>Bore Stankovica 17</strong>
+          <strong>Bore Stankovića 17</strong>
           <br>11 000 Belgrade
           <br>Republic of Serbia
           <br>
@@ -109,29 +109,29 @@
         <hr>
         <form class="rating">
           <label>
-            <input type="radio" name="stars" value="1" />
+            <input type="radio" name="stars" value="1" onClick = "rate('terminal',1)"/>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="2" />
+            <input type="radio" name="stars" value="2" onClick = "rate('terminal',2)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="3" />
+            <input type="radio" name="stars" value="3" onClick = "rate('terminal',3)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>   
           </label>
           <label>
-            <input type="radio" name="stars" value="4" />
+            <input type="radio" name="stars" value="4" onClick = "rate('terminal',4)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="5" />
+            <input type="radio" name="stars" value="5" onClick = "rate('terminal',5)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
@@ -140,7 +140,7 @@
           </label>
         </form>
         <br>
-        <label id="manufaktura-rate"> Rating : 4.4/5.0</label>
+        <label id="terminal-rate"> Rating : <label id = "ratingterminal"></label>/5.0</label>
         <hr>
         $$$, <label class="category"> Chinese </label> 
         <hr>
@@ -220,7 +220,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item2">Turtle pistachios</h4>
         <p class="card-text">
-			<label id = "desc1">turkey, pistachios, mix salad, pepper, carrots and dressing.</label>
+			<label id = "desc2">turkey, pistachios, mix salad, pepper, carrots and dressing.</label>
 			<br>
 			Price: <label id = "price2"> 890 </label> RSD
 		</p>
@@ -236,7 +236,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item3">Grilled octopus</h4>
         <p class="card-text">
-			<label id = "desc1">soft octopus served with young potatoes and spinach with primavera sauce.</label>
+			<label id = "desc3">soft octopus served with young potatoes and spinach with primavera sauce.</label>
 			<br>
 			Price: <label id = "price3"> 2390 </label> RSD
 		</p>
@@ -257,7 +257,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item4">Turtle saltimboka</h4>
         <p class="card-text">
-			<label id = "desc1">baked turkey with prosciutto, sage sauce served with potatoes and vegetables.</label>
+			<label id = "desc4">baked turkey with prosciutto, sage sauce served with potatoes and vegetables.</label>
 			<br>
 			Price: <label id = "price4"> 1090 </label> RSD
 		</p>
@@ -273,7 +273,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item5">Pancake terminal</h4>
         <p class="card-text">
-			<label id = "desc1">pancake on a butter with mascarpone cheese, apricots and wild fruits.</label>
+			<label id = "desc5">pancake on a butter with mascarpone cheese, apricots and wild fruits.</label>
 			<br>
 			Price: <label id = "price5"> 790 </label> RSD
 		</p>
@@ -289,7 +289,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item6">Turtles with turkey</h4>
         <p class="card-text">
-			<label id = "desc1">grilled mlin, turkey, gorgonzola, milleram, mozzarella and parmesan.</label>
+			<label id = "desc6">grilled mlin, turkey, gorgonzola, milleram, mozzarella and parmesan.</label>
 			<br>
 			Price: <label id = "price6"> 890 </label> RSD
 		</p>
@@ -302,7 +302,7 @@
 </div>    
 
 
-<h1 class="my-4">Visit us at address: </h1>
+<h1 class="my-4">Visit us at: </h1>
 
 <div class="map-container">
  <div class="row">
@@ -372,6 +372,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 <script src="../js/order.js"></script>
+<script src="../js/rate.js"></script>
 
 <script>
  function myMap() {
@@ -401,7 +402,29 @@ function load() {
    document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='terminal.html' onclick = 'logout()'>Izloguj se</a>";
  }
 }
+var restaurants = [];
+	restaurants[0] = localStorage.getItem("restaurants[0]");
+	restaurants[1] = localStorage.getItem("restaurants[1]");
+	restaurants[2] = localStorage.getItem("restaurants[2]");
+	restaurants[3] = localStorage.getItem("restaurants[3]");
+	restaurants[4] = localStorage.getItem("restaurants[4]");
+	
+	var grades = [];
+	grades[0] = localStorage.getItem("grades[0]");
+	grades[1] = localStorage.getItem("grades[1]");
+	grades[2] = localStorage.getItem("grades[2]");
+	grades[3] = localStorage.getItem("grades[3]");
+	grades[4] = localStorage.getItem("grades[4]");
 
+	var i;
+	for(i = 0; i < restaurants.length; i++) {
+		
+		if(restaurants[i] == "terminal"){
+		
+		document.getElementById("ratingterminal").innerHTML = grades[i];
+		
+		}
+	}
 }
 </script>
 </body>

@@ -106,29 +106,29 @@
     <hr>
     <form class="rating">
       <label>
-        <input type="radio" name="stars" value="1" />
+        <input type="radio" name="stars" value="1" onClick = "rate('madera',1)"/>
         <span class="icon">★</span>
       </label>
       <label>
-        <input type="radio" name="stars" value="2" />
+        <input type="radio" name="stars" value="2" onClick = "rate('madera',2)"/>
         <span class="icon">★</span>
         <span class="icon">★</span>
       </label>
       <label>
-        <input type="radio" name="stars" value="3" />
+        <input type="radio" name="stars" value="3" onClick = "rate('madera',3)"/>
         <span class="icon">★</span>
         <span class="icon">★</span>
         <span class="icon">★</span>   
       </label>
       <label>
-        <input type="radio" name="stars" value="4" />
+        <input type="radio" name="stars" value="4" onClick = "rate('madera',4)"/>
         <span class="icon">★</span>
         <span class="icon">★</span>
         <span class="icon">★</span>
         <span class="icon">★</span>
       </label>
       <label>
-        <input type="radio" name="stars" value="5" />
+        <input type="radio" name="stars" value="5" onClick = "rate('madera',5)"/>
         <span class="icon">★</span>
         <span class="icon">★</span>
         <span class="icon">★</span>
@@ -137,7 +137,7 @@
       </label>
     </form>
     <br>
-    <label id="manufaktura-rate"> Ocena : 4.77/5.0</label>
+    <label id="madera-rate"> Ocena :<label id = "ratingmadera"></label> /5.0</label>
     <hr>
     $$$, <label class="category"> Tradicionalna </label> 
     <hr>
@@ -368,7 +368,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 <script src="../js/order.js"></script>
-
+<script src="../js/rate.js"></script>
 
 <script>
  function myMap() {
@@ -394,7 +394,29 @@
      document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='madera.html' onclick = 'logout()'>Izloguj se</a>";
    }
  }
+var restaurants = [];
+	restaurants[0] = localStorage.getItem("restaurants[0]");
+	restaurants[1] = localStorage.getItem("restaurants[1]");
+	restaurants[2] = localStorage.getItem("restaurants[2]");
+	restaurants[3] = localStorage.getItem("restaurants[3]");
+	restaurants[4] = localStorage.getItem("restaurants[4]");
+	
+	var grades = [];
+	grades[0] = localStorage.getItem("grades[0]");
+	grades[1] = localStorage.getItem("grades[1]");
+	grades[2] = localStorage.getItem("grades[2]");
+	grades[3] = localStorage.getItem("grades[3]");
+	grades[4] = localStorage.getItem("grades[4]");
 
+	var i;
+	for(i = 0; i < restaurants.length; i++) {
+		
+		if(restaurants[i] == "madera"){
+		
+		document.getElementById("ratingmadera").innerHTML = grades[i];
+		
+		}
+	}
 }
 </script>
 

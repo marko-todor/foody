@@ -109,29 +109,29 @@
         <hr>
         <form class="rating">
           <label>
-            <input type="radio" name="stars" value="1" onClick = "rate('manufaktura',1)"/>
+            <input type="radio" name="stars" value="1" onClick = "rate('terminal',1)"/>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="2" />
+            <input type="radio" name="stars" value="2" onClick = "rate('terminal',2)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="3" />
+            <input type="radio" name="stars" value="3" onClick = "rate('terminal',3)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>   
           </label>
           <label>
-            <input type="radio" name="stars" value="4" />
+            <input type="radio" name="stars" value="4" onClick = "rate('terminal',4)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
           </label>
           <label>
-            <input type="radio" name="stars" value="5" />
+            <input type="radio" name="stars" value="5" onClick = "rate('terminal',5)"/>
             <span class="icon">★</span>
             <span class="icon">★</span>
             <span class="icon">★</span>
@@ -140,7 +140,7 @@
           </label>
         </form>
         <br>
-        <label id="manufaktura-rate"> Ocena : 4.4/5.0</label>
+        <label id="manufaktura-rate"> Ocena : <label id = "ratingterminal"></label>/5.0</label>
         <hr>
         $$$, <label class="category"> Kineska </label> 
         <hr>
@@ -220,7 +220,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item2">Ćuretina pistaći</h4>
         <p class="card-text">
-			<label id = "desc1">ćuretina, pistaći, mix salata, paprika, šargarepa i dresing.</label>
+			<label id = "desc2">ćuretina, pistaći, mix salata, paprika, šargarepa i dresing.</label>
 			<br>
 			Cena: <label id = "price2"> 890 </label> RSD
 		</p>
@@ -236,7 +236,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item3">Grilovana hobotnica</h4>
         <p class="card-text">
-			<label id = "desc1">mekana hobotnica servirana sa mladim krompirom i spanaćem sa primavera sosom.</label>
+			<label id = "desc3">mekana hobotnica servirana sa mladim krompirom i spanaćem sa primavera sosom.</label>
 			<br>
 			Cena: <label id = "price3"> 2390 </label> RSD
 		</p>
@@ -257,7 +257,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item4">Ćuretina saltimboka</h4>
         <p class="card-text">
-			<label id = "desc1">zapečena ćuretina sa pršutom, sosom od žalfije, servirana sa krompirićima i povrćem.</label>
+			<label id = "desc4">zapečena ćuretina sa pršutom, sosom od žalfije, servirana sa krompirićima i povrćem.</label>
 			<br>
 			Cena: <label id = "price4"> 1090 </label> RSD
 		</p>
@@ -273,7 +273,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item5">Palačinka terminal</h4>
         <p class="card-text">
-			<label id = "desc1">palačinka na puteru sa maskarpone sirom, kajsijama i šumskim voćem.</label>
+			<label id = "desc5">palačinka na puteru sa maskarpone sirom, kajsijama i šumskim voćem.</label>
 			<br>
 			Cena: <label id = "price5"> 790 </label> RSD
 		</p>
@@ -289,7 +289,7 @@
       <div class="card-body">
         <h4 class="card-title" id = "item6">Mlinci sa ćuretinom</h4>
         <p class="card-text">
-			<label id = "desc1">zapečeni mlinci, ćuretina, gorgonzola, mileram, mocarela i parmezan.</label>
+			<label id = "desc6">zapečeni mlinci, ćuretina, gorgonzola, mileram, mocarela i parmezan.</label>
 			<br>
 			Cena: <label id = "price6"> 890 </label> RSD
 		</p>
@@ -371,6 +371,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
 
 <script src="../js/order.js"></script>
+<script src="../js/sort.js"></script>
+<script src = "../js/rate.js"></script>
 
 <script>
  function myMap() {
@@ -400,11 +402,33 @@ function load() {
    document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='terminal.html' onclick = 'logout()'>Izloguj se</a>";
  }
 }
+	var restaurants = [];
+	restaurants[0] = localStorage.getItem("restaurants[0]");
+	restaurants[1] = localStorage.getItem("restaurants[1]");
+	restaurants[2] = localStorage.getItem("restaurants[2]");
+	restaurants[3] = localStorage.getItem("restaurants[3]");
+	restaurants[4] = localStorage.getItem("restaurants[4]");
+	
+	var grades = [];
+	grades[0] = localStorage.getItem("grades[0]");
+	grades[1] = localStorage.getItem("grades[1]");
+	grades[2] = localStorage.getItem("grades[2]");
+	grades[3] = localStorage.getItem("grades[3]");
+	grades[4] = localStorage.getItem("grades[4]");
 
+	var i;
+	for(i = 0; i < restaurants.length; i++) {
+		
+		if(restaurants[i] == "terminal"){
+		
+		document.getElementById("ratingterminal").innerHTML = grades[i];
+		
+		}
+	}
 }
 </script>
 
-<script src = "../js/rate.js"></script>
+
 
 </body>
 

@@ -9,65 +9,65 @@ function redirectRestaurant(){
 
 	switch(name){
 		case 'manufaktura' : {
-			window.open("pages/manufaktura.html");
+			window.open("eng/manufaktura.html");
 			break;
 		}
 		case 'madera' : {
-			window.open("pages/madera.html");
+			window.open("eng/madera.html");
 			break;
 		}
 		case 'toro' : {
-			window.open("pages/toro.html");
+			window.open("eng/toro.html");
 			break;
 		}
 		case 'terminal' : {
-			window.open("pages/terminal.html");
+			window.open("eng/terminal.html");
 			break;
 		}
 		case 'smokvica' : {
-			window.open("pages/smokvica.html");
+			window.open("eng/smokvica.html");
 			break;
 		}
 	}
 
 }
 
-function redirectType(){		
-			
-		var selection = document.getElementById("foodSearch");		
-		var type = selection.options[selection.selectedIndex].value;		
-				
-			
-		switch(type){		
-			case 'Kineska' : {		
-				window.open("pages/chinese.html");		
-				break;		
-			}		
-			case 'Tradicionalna' : {		
-				window.open("pages/traditional.html");		
-				break;		
-			}		
-			case 'Meksička' : {		
-				window.open("pages/mexican.html");		
-				break;		
-			}		
-			case 'Italijanska' : {		
-				window.open("pages/italian.html");		
-				break;		
-			}		
-		}		
-			
-	}		
+function redirectType(){
+
+	var selection = document.getElementById("foodSearch");
+	var type = selection.options[selection.selectedIndex].value;
 	
+
+	switch(type){
+		case 'Chinese' : {
+			window.open("eng/chinese.html");
+			break;
+		}
+		case 'Traditional' : {
+			window.open("eng/traditional.html");
+			break;
+		}
+		case 'Mexican' : {
+			window.open("eng/mexican.html");
+			break;
+		}
+		case 'Italian' : {
+			window.open("eng/italian.html");
+			break;
+		}
+	}
+
+}
+
 
 function fillUsers() {
 			if ('localStorage' in window && window.localStorage !== null) {
 				localStorage.setItem("ana-dimi", "ana123");
 				localStorage.setItem("markotod", "marko123");
 				if(!localStorage.getItem('user')) {
-					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='pages/login.html'>Uloguj se</a>";
+					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='eng/login.html'>Log in</a>";
 				} else {
-					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='index.html' onclick = 'logout()'>Izloguj se</a>";
+					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='index.html' onclick = 'logout()'>Log out</a>";
 				}
 			}
 			if(localStorage.getItem("loaded") != "yes")initialize();
@@ -77,11 +77,11 @@ function fillUsers() {
 function login(){
 				if ('localStorage' in window && window.localStorage !== null) {
 					if(document.myform.username.value == ""){
-						alert("Niste uneli korisnicko ime");
+						alert("You did not enter username");
 						return;
 					}
 					if(document.myform.password.value == ""){
-						alert("Niste uneli lozinku");
+						alert("You did not enter password");
 						return;
 					}
 					for(i=0; i<localStorage.length; i++){
@@ -93,23 +93,23 @@ function login(){
 									}
 								}
 					}
-					alert("Neuspesno logovanje");
-				} else { alert("Fali local storage");}
+					alert("Invalid login");
+				} else { alert("Local storage missing");}
 }
 			
 function register() {
 				if ('localStorage' in window && window.localStorage !== null) {
 					if(document.registrationForm.username.value == ""){
-						alert("Niste uneli korisnicko ime");
+						alert("You did not enter username");
 						return;
 					}
 					if(document.registrationForm.password.value == ""){
-						alert("Niste uneli lozinku");
+						alert("You did not enter password");
 						return;
 					}
 					for(i=0; i<localStorage.length; i++){
 								if(localStorage.key(i)==document.registrationForm.username.value){
-									alert("Već postojeći username");
+									alert("Username already taken");
 								}
 					}
 					localStorage.setItem(document.registrationForm.username.value, document.registrationForm.password.value);

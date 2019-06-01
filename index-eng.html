@@ -112,7 +112,7 @@
 			</div>
 		</div>
 
-		<h1 class="my-4">Welcome to Foody: We recommend:</h1>
+		<h1 class="my-4">Welcome to Foody! We recommend:</h1>
 
 		<div class="row" style="margin-top:20px;">
 			<div class="col-md-4 mb-5">
@@ -170,6 +170,20 @@
 				</div>
 			</div>
 		</form>
+			<h1 class="my-4"> Interested in specific food type?  </h1>		
+			<center>		
+			<form>		
+			  <select id="foodSearch" class="select-style">		
+					<option>Chinese</option>		
+					<option>Mexican</option>		
+					<option>Traditional</option>		
+					<option>Italian</option>		
+			  </select>		
+			  <button class="btn btn-sm btn-secondary" type="button" onClick="redirectType()">		
+									<i class="fa fa-search"></i>		
+			</form>		
+			</center>		
+	
 
 		<br><br>
 
@@ -236,21 +250,9 @@
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/foody.js"></script>
-<script>
-	function fillUsers() {
-			if ('localStorage' in window && window.localStorage !== null) {
-				localStorage.setItem("ana-dimi", "ana123");
-				localStorage.setItem("markotod", "marko123");
-				if(!localStorage.getItem('user')) {
-					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='eng/login.html'>Log in</a>";
-				} else {
-					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='index-eng.html' onclick = 'logout()'>Log out</a>";
-				}
-			}
-			
-}
-</script>
+<script src="js/sort.js"></script>
+<script src="js/foody-eng.js"></script>
+
 
 </body>
 
