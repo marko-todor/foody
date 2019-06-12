@@ -193,7 +193,7 @@
 
 <h1 class="my-4">Izdvajamo iz našeg menija: </h1>
 
-
+<form name="menu">
 <div class="row">
   <div class="col-md-4 mb-5">
     <div class="card h-100">
@@ -207,7 +207,7 @@
         </p>
       </div>
       <div class="card-footer text-center">
-        <input type="button" class="btn btn-outline-danger" onClick="order(1)" value="Naruči"></input>
+        <input type="checkbox" name="menu" value="1"> Naruči </input>
       </div>
     </div>
   </div>
@@ -223,7 +223,7 @@
         </p>
       </div>
       <div class="card-footer text-center">
-        <input type="button" class="btn btn-outline-danger" onClick="order(2)" value="Naruči"></input>
+        <input type="checkbox" name="menu" value="2"> Naruči </input>
       </div>
     </div>
   </div>
@@ -239,7 +239,7 @@
         </p>
       </div>
       <div class="card-footer text-center">
-        <input type="button" class="btn btn-outline-danger" onClick="order(3)" value="Naruči"></input>
+        <input type="checkbox" name="menu" value="3"> Naruči </input>
       </div>
     </div>
   </div>
@@ -260,7 +260,7 @@
         </p>
       </div>
       <div class="card-footer text-center">
-       <input type="button" class="btn btn-outline-danger" onClick="order(4)" value="Naruči"></input>
+       <input type="checkbox" name="menu" value="4"> Naruči </input>
      </div>
    </div>
  </div>
@@ -276,7 +276,7 @@
       </p>
     </div>
     <div class="card-footer text-center">
-      <input type="button" class="btn btn-outline-danger" onClick="order(5)" value="Naruči"></input>
+      <input type="checkbox" name="menu" value="5"> Naruči </input>
     </div>
   </div>
 </div>
@@ -292,12 +292,18 @@
       </p>
     </div>
     <div class="card-footer text-center">
-      <input type="button" class="btn btn-outline-danger" onClick="order(6)" value="Naruči"></input>
+      <input type="checkbox" name="menu" value="6"> Naruči </input>
     </div>
   </div>
 </div>
-</div>    
+</div>  
 
+<div class="row">
+	<div class="offset-sm-6">
+	<input type="button" class="btn btn-outline-danger" onClick="order()" value="Potvrdi">
+	</div>
+</div>  
+</form>
 
 <h1 class="my-4">Posetite nas na adresi: </h1>
 

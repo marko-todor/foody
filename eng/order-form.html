@@ -213,44 +213,18 @@
 		
 
 		
-		
 		<div class = "row">
-			<table id="cart" class="table table-hover table-condensed">
-				<thead>
-					<tr>
-						<th style="width:50%">Product</th>
-						<th style="width:10%">Price</th>
-						<th style="width:8%">Quantity</th>
-						<th style="width:22%" class="text-center">In total</th>
-						<th style="width:10%"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td data-th="Proizvod">
-							<div class="row">
-								<div class="col-sm-2"><img src="" class="img img-fluid" id="orderFormImg"></div>
-								<div class="col-sm-10">
-									<h4 class="nomargin" id="orderFormItem"></h4>
-									<p id="orderFormDesc"></p>
-								</div>
-							</div>
-						</td>
-						<td id="orderFormPrice">  </td>
-						<td>
-							<input type="number" class="form-control text-center" value="1" id="orderFormQuantity">
-						</td>
-						<td class="text-center"> 
-							<label id="orderFormPrice"></label>
-							&nbsp; &nbsp;
-							<button class="btn btn-danger btn-sm" onClick="cancel()"><i class="fas fa-times"></i></button>
-							&nbsp; &nbsp;
-							<button class="btn btn-success btn-sm" onClick="confirm()"><i class="fas fa-check"></i></button>
-						</td>
-					</tr>
-				</tbody>
+			<table class="table table-hover table-condensed" id="orderFormItems">
 				
 			</table>
+		</div>
+		
+		<div class="row">
+			<div class="offset-sm-5">
+				<input type="button" class="btn btn-outline-success" onClick="confirm()" value="Confirm">
+				<input type="button" class="btn btn-outline-danger" onClick="cancel()" value="Cancel">
+			</div>
+			
 		</div>
 
 	</div>
@@ -314,25 +288,40 @@
 				} else {
 					document.getElementById('loginText').innerHTML = "<a class='nav-link' href ='order-form.html' onclick = 'logout()'>Izloguj se</a>";
 				}
+				
+				var i;
+				for(i=1; i<=6; i++) {
+				
+					var value = localStorage.getItem("orderFormItem"+i);
+					
+					if (value != "null") {
 
-				document.getElementById("orderFormItem").innerHTML = localStorage.getItem("orderFormItem");
-				document.getElementById("orderFormImg").src = localStorage.getItem("orderFormImg");
-				document.getElementById("orderFormPrice").innerHTML = localStorage.getItem("orderFormPrice") + " RSD";
-				document.getElementById("orderFormDesc").innerHTML = localStorage.getItem("orderFormDesc");
+						var table = document.getElementById("orderFormItems");
+						
+						var row = table.insertRow();
+						
+						row.innerHTML = "<td data-th='Item'><div class='row'><div class='col-sm-2'><img src='" + localStorage.getItem("orderFormImg"+i) + "' class='img img-fluid' id='orderFormImg'></div><div class='col-sm-10'><h4 class='nomargin' id='orderFormItem'>" + localStorage.getItem("orderFormItem" + i) + "</h4><p id='orderFormDesc'>" + localStorage.getItem("orderFormDesc" + i) + "</p></div></div></td><td id='orderFormPrice"+ i +"'> " + localStorage.getItem("orderFormPrice"+i) + " RSD </td><td><input type='number' class='form-control text-center' value='1' min='1' id='orderFormQuantity"+ i + "'></td>";
+					}
+				
+				
+				}
 
-				var quantity = document.getElementById("orderFormQuantity").value - 0;
-				var unitPrice = localStorage.getItem("orderFormPrice") - 0;
 
 			}
 		}
 
 		function cancel() {
 
-			localStorage.removeItem("orderFormItem");
-			localStorage.removeItem("orderFormImg");
-			localStorage.removeItem("orderFormPrice");
-			localStorage.removeItem("orderFormDesc");
-
+		for(i=1; i<=6; i++) {
+		
+			localStorage.removeItem("orderFormItem"+i);
+			localStorage.removeItem("orderFormImg"+i);
+			localStorage.removeItem("orderFormPrice"+i);
+			localStorage.removeItem("orderFormDesc"+i);
+			
+		}
+			var table = document.getElementById("orderFormItems");
+			table.innerHTML = "";
 			window.open("restaurants.html");
 
 		}
@@ -351,31 +340,44 @@
 			 	alert("Please complete all of the required fields!");
 			}
 			else {
-			var quantity = document.getElementById("orderFormQuantity").value - 0;
-			var unitPrice = localStorage.getItem("orderFormPrice") - 0;
-
-			var total = quantity * unitPrice; 
-			total = total - 0;
-			
+			var ordersSession = localStorage.getItem("ordersSession");
 			var receipt = localStorage.getItem("receipt");
+			var i;
 			
-			if(receipt != null){
-				receipt = receipt - 0;
-				receipt += total;
+			var newOrder = "";
+			
+			for(i=1; i<=6; i++){
+			
+			var value = localStorage.getItem("orderFormItem"+i);		
+			
+			if (value != "null"){
+
+				var quantity = document.getElementById("orderFormQuantity"+i).value - 0;
+				var unitPrice = localStorage.getItem("orderFormPrice"+i) - 0;
+
+				var total = quantity * unitPrice; 
+				total = total - 0;
+			
+
+				if(receipt != null){
+					receipt = receipt - 0;
+					receipt += total;
+				}
+				else { receipt = total; }
+				
+				 newOrder += "<tr><td data-th='Proizvod'><div class='row'><div class='col-sm-2'><img src='" + localStorage.getItem("orderFormImg"+i) + "' class='img img-fluid' " + "></div><div class='col-sm-10'><h4 class='nomargin'>" + localStorage.getItem("orderFormItem"+i) + "</h4><p>" + localStorage.getItem("orderFormDesc"+i) + "</p></div></div></td><td>" + localStorage.getItem("orderFormPrice"+i) + " RSD </td><td>" + quantity + "</td><td class='text-center'><label>" + total + " RSD </label></td></tr>";
+			
 			}
-			else { receipt = total; }
+			
+			
+			}
+			
+			if (ordersSession != null) {
+					ordersSession += newOrder;
+				}
+				else {ordersSession = newOrder};
 			
 			localStorage.setItem("receipt", receipt);
-			
-			var ordersSession = localStorage.getItem("ordersSession");
-
-			var newOrder = "<tr><td data-th='Proizvod'><div class='row'><div class='col-sm-2'><img src='" + localStorage.getItem("orderFormImg") + "' class='img img-fluid' " + "></div><div class='col-sm-10'><h4 class='nomargin'>" + localStorage.getItem("orderFormItem") + "</h4><p>" + localStorage.getItem("orderFormDesc") + "</p></div></div></td><td class='text-center'>" + localStorage.getItem("orderFormPrice") + " RSD </td><td align='center'>" + quantity + "</td><td class='text-center'><label>" + total + " RSD </label></td></tr>";
-
-			if (ordersSession != null) {
-				ordersSession += newOrder;
-			}
-			else ordersSession = newOrder;
-			
 			localStorage.setItem("ordersSession", ordersSession);
 			window.open("my-orders.html");
 			}

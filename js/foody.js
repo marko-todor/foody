@@ -2,6 +2,7 @@
 //   console.log('New star rating: ' + this.value);
 // });
 
+
 function redirectRestaurant(){
 
 	var restaurantName = document.nameSearch.restaurantName.value;

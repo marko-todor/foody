@@ -195,7 +195,7 @@
 
  <h1 class="my-4"> We recommend from our menu: </h1>
 
-
+<form name="menu">
  <div class="row">
   <div class="col-md-4 mb-5">
     <div class="card h-100">
@@ -209,7 +209,7 @@
        </p>
      </div>
      <div class="card-footer text-center">
-      <input type="button" class="btn btn-outline-danger" onClick="order(1)" value="Order"></input>
+      <input type="checkbox" name="menu" value="1"> Order </input>
     </div>
   </div>
 </div>
@@ -225,7 +225,7 @@
        </p>
      </div>
      <div class="card-footer text-center">
-      <input type="button" class="btn btn-outline-danger" onClick="order(2)" value="Order"></input>
+      <input type="checkbox" name="menu" value="2"> Order </input>
     </div>
   </div>
 </div>
@@ -241,7 +241,7 @@
      </p>
    </div>
    <div class="card-footer text-center">
-     <input type="button" class="btn btn-outline-danger" onClick="order(3)" value="Order"></input>
+     <input type="checkbox" name="menu" value="3"> Order </input>
    </div>
  </div>
 </div>
@@ -262,7 +262,7 @@
        </p>
      </div>
      <div class="card-footer text-center">
-       <input type="button" class="btn btn-outline-danger" onClick="order(4)" value="Order"></input>
+       <input type="checkbox" name="menu" value="4"> Order </input>
      </div>
    </div>
  </div>
@@ -278,7 +278,7 @@
      </p>
    </div>
    <div class="card-footer text-center">
-    <input type="button" class="btn btn-outline-danger" onClick="order(5)" value="Order"></input>
+    <input type="checkbox" name="menu" value="5"> Order </input>
   </div>
 </div>
 </div>
@@ -294,11 +294,18 @@
      </p>
    </div>
    <div class="card-footer text-center">
-     <input type="button" class="btn btn-outline-danger" onClick="order(6)" value="Order"></input>
+     <input type="checkbox" name="menu" value="6"> Order </input>
    </div>
  </div>
 </div>
 </div>    
+
+<div class="row">
+	<div class="offset-sm-6">
+	<input type="button" class="btn btn-outline-danger" onClick="order()" value="Confirm">
+	</div>
+</div>  
+</form>   
 
 
 <h1 class="my-4"> Visit us at: </h1>
